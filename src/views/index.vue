@@ -7,12 +7,9 @@ const mousemove = (evt: any) => {
   flys.forEach(it => {
     let x = it.getBoundingClientRect().left + it.clientWidth / 2;
     let y = it.getBoundingClientRect().top + it.clientHeight / 2;
-
-    let m = 0;
     let radian = Math.atan2(evt.x - x, evt.y - y);
-    let rot = radian * (180 / Math.PI) * -1 + m;
+    let rot = radian * (180 / Math.PI) * -1;
     let rotate = `rotate(${rot}deg)`;
-
     it.style.transform = rotate;
   });
 };
